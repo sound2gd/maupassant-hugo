@@ -21,7 +21,7 @@
         </div>
         {{ end }}
         <div class="post-content">
-            {{ .Content }}
+            {{ replace .Content "<!--advert-->" (partial "my_ads.html" .) | safeHTML }}
         </div>
 
         {{ partial "copyright" .}}
