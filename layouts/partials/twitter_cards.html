@@ -3,7 +3,7 @@
 {{ warnf "%v" $url }}
 {{ $image := resources.GetRemote $url }}
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="{{ $image.RelPermalink }}">
+<meta name="twitter:image" content="{{ $image.Permalink }}">
 {{ else }}
 {{- $image := resources.Get "future_image.png" -}}
 {{ warnf "%v" $image }}
