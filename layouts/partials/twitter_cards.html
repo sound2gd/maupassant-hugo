@@ -1,6 +1,6 @@
 {{ if .Params.twitterTitle }}
-{{ $url = printf "%s%s%s" "https://twittercardseo.sound2gd.wang?text=" .Params.twitterTitle  "&blog=Chris的博客 | AI创业"| urlquery }}
-{{ warnf $url }}
+{{ $url := printf "%s%s%s%s" "https://twittercardseo.sound2gd.wang?text=" (urlquery .Params.twitterTitle)  "&blog=" (urlquery "\nChris的博客 | AI创业" )|  }}
+{{ warnf "%v" $url }}
 {{ $image := resources.GetRemote $url }}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="{{ $image.Permalink }}">
